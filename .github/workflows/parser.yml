@@ -18,4 +18,4 @@ jobs:
       - name: Run Scanner
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
-        run: python super_scanner_v10.py
+        run: python super_scanner_v8.py
