@@ -1,36 +1,32 @@
 name: Auto Scanner
 on:
   schedule:
-    - cron: '0 * * * *'   # Раз в час (чтобы не сжечь минуты)
-  workflow_dispatch:      # Ручной запуск
+    - cron: '0 * * * *'
+  workflow_dispatch:
 
 jobs:
   run-scanner:
     runs-on: ubuntu-latest
     permissions:
-      contents: write     # РАЗРЕШАЕМ БОТУ ДЕЛАТЬ КОММИТЫ
+      contents: write
+      pages: write
+      id-token: write
     steps:
       - uses: actions/checkout@v4
-
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-
       - name: Install dependencies
-        run: pip install requests beautifulsoup4
-
+        run: pip install requests
       - name: Run Scanner
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
-        run: |
-          python super_scanner_v8.py > results.txt 2>&1 || true
-
-      - name: Commit results back
+        run: python server_scanner.py
+      - name: Commit results
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add results.txt
-          git commit -m "Update scan results $(date -u)" || echo "No changes"
-          git pull --rebase origin main
-          git push origin main
+          git add results.json index.html
+          git commit -m "Update results & UI $(date -u)" || echo "No changes"
+          git push

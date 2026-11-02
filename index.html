@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Arbitrage Scanner</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white font-sans p-6">
+    <div class="max-w-4xl mx-auto">
+        <h1 class="text-2xl font-bold text-blue-400 mb-6">🤖 Панель Арбитража</h1>
+        <p class="text-gray-400 mb-4">Данные обновляются автоматически на серверах GitHub.</p>
+        <div id="content" class="space-y-4"></div>
+    </div>
+    <script>
+        fetch('results.json').then(r => r.json()).then(data => {
+            const c = document.getElementById('content');
+            if (!data.length) { c.innerHTML = '<p class="text-yellow-400">Связок пока нет, ждем следующий скан.</p>'; return; }
+            data.forEach(item => {
+                const scam = item.is_scam ? '⚠️ СКАМ' : '✅ БЕЗОПАСНО';
+                const scamColor = item.is_scam ? 'text-red-400' : 'text-green-400';
+                c.innerHTML += `
+                    <div class="bg-gray-800 p-4 rounded-lg border border-gray-700">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h2 class="font-bold text-lg">${item.name}</h2>
+                                <p class="text-sm text-gray-400">${item.seller} | ${item.region}</p>
+                            </div>
+                            <span class="bg-green-900 text-green-300 px-2 py-1 rounded text-sm font-bold">+${item.profit}$ (${item.pct}%)</span>
+                        </div>
+                        <div class="mt-2 flex justify-between items-center text-sm">
+                            <span>Купить: <b>$${item.price}</b> | Сдать: <b>$${item.sell_price}</b> (${item.rate}%)</span>
+                            <span class="${scamColor} font-bold">${scam}</span>
+                        </div>
+                        <a href="${item.url}" target="_blank" class="mt-2 block text-center bg-blue-600 hover:bg-blue-700 py-1 rounded text-sm mt-3">Открыть лот</a>
+                    </div>
+                `;
+            });
+        }).catch(() => { document.getElementById('content').innerHTML = '<p class="text-red-400">Ошибка загрузки данных.</p>'; });
+    </script>
+</body>
+</html>
