@@ -1,0 +1,19 @@
+A browser window should have opened at the following URL:
+
+https://dash.cloudflare.com/argotunnel?aud=&callback=https%3A%2F%2Flogin.cloudflareaccess.org%2FR5awUNb2ds2UFICuF1feg0fmu6JzDMGHSQmOjGwtDBU%3D
+
+If the browser failed to open, please visit the URL above directly in your browser.
+2026-11-02T08:09:35Z INF Waiting for login...
+2026-11-02T08:10:27Z INF Waiting for login...
+2026-11-02T08:11:20Z INF Waiting for login...
+2026-11-02T08:12:14Z INF Waiting for login...
+2026-11-02T08:13:07Z INF Waiting for login...
+2026-11-02T08:14:00Z INF Waiting for login...
+2026-11-02T08:14:30Z ERR Failed to write the certificate.
+
+Your browser will download the certificate instead. You will have to manually
+copy it to the following path:
+
+/data/data/com.termux/files/home/.cloudflared/cert.pem
+ error="Get \"https://login.cloudflareaccess.org/R5awUNb2ds2UFICuF1feg0fmu6JzDMGHSQmOjGwtDBU=\": read tcp [2a00:1fa1:b130:6764:ada0:c48a:4efe:af95]:50260->[2606:4700:300a::c629:d69c]:443: read: connection reset by peer"
+Get "https://login.cloudflareaccess.org/R5awUNb2ds2UFICuF1feg0fmu6JzDMGHSQmOjGwtDBU=": read tcp [2a00:1fa1:b130:6764:ada0:c48a:4efe:af95]:50260->[2606:4700:300a::c629:d69c]:443: read: connection reset by peer

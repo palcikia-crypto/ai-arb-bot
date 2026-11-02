@@ -1,0 +1,79 @@
+[
+  {
+    "category": "Xbox Global 10",
+    "price": 0.99,
+    "seller": "Official Trade",
+    "url": "https://plati.market/itm/5230542",
+    "sell_rate": 0.85,
+    "usd_value": 10,
+    "sell_price": 8.5,
+    "profit": 7.51,
+    "profit_pct": 758.6
+  },
+  {
+    "category": "Xbox USA 10",
+    "price": 0.99,
+    "seller": "Official Trade",
+    "url": "https://plati.market/itm/5230542",
+    "sell_rate": 0.85,
+    "usd_value": 10,
+    "sell_price": 8.5,
+    "profit": 7.51,
+    "profit_pct": 758.6
+  },
+  {
+    "category": "Nintendo 20",
+    "price": 7.86,
+    "seller": "BAZAAR-STORE",
+    "url": "https://plati.market/itm/4278328",
+    "sell_rate": 0.85,
+    "usd_value": 20,
+    "sell_price": 17.0,
+    "profit": 9.14,
+    "profit_pct": 116.3
+  },
+  {
+    "category": "Nintendo 10",
+    "price": 5.9,
+    "seller": "PROMARKET88",
+    "url": "https://plati.market/itm/3451437",
+    "sell_rate": 0.85,
+    "usd_value": 10,
+    "sell_price": 8.5,
+    "profit": 2.6,
+    "profit_pct": 44.1
+  },
+  {
+    "category": "Steam Turkey 10",
+    "price": 6.57,
+    "seller": "Робин Гуд ШОП",
+    "url": "https://plati.market/itm/4377178",
+    "sell_rate": 0.85,
+    "usd_value": 10,
+    "sell_price": 8.5,
+    "profit": 1.93,
+    "profit_pct": 29.4
+  },
+  {
+    "category": "V-Bucks 1000",
+    "price": 3.8,
+    "seller": "GalaxyLink",
+    "url": "https://plati.market/itm/4424176",
+    "sell_rate": 0.6,
+    "usd_value": 8.0,
+    "sell_price": 4.8,
+    "profit": 1.0,
+    "profit_pct": 26.3
+  },
+  {
+    "category": "V-Bucks 2800",
+    "price": 13.03,
+    "seller": "bohemashop",
+    "url": "https://plati.market/itm/4087917",
+    "sell_rate": 0.6,
+    "usd_value": 22.4,
+    "sell_price": 13.44,
+    "profit": 0.41,
+    "profit_pct": 3.1
+  }
+]

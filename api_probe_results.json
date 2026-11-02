@@ -1,0 +1,6 @@
+{
+  "SellCardNow": {
+    "url": "https://sellcardnow.com/api/rates",
+    "sample": "{\"ok\":true,\"updatedAt\":\"2026-11-02T06:50:13.897Z\",\"quoteCurrency\":\"CNY\",\"source\":\"static_reference_snapshot\",\"note\":\"No active platform pricing rows have complete FX settings yet, so static reference rows are shown.\",\"items\":[{\"code\":\"amazon-au-100-1\",\"label\":\"Amazon Gift Card (AU) → Kenya payout → KES\",\"category\":\"Amazon\",\"region\":\"AU\",\"payoutCountry\":\"Kenya\",\"payoutCurrency\":\"KES\",\"payoutAmount\":300,\"ratePerUnitCny\":3,\"faceValueLabel\":\"100\",\"indicativeRate\":\"KES 4677.73 total\",\"unit\":\"KES 4677.73 total\",\"updatedAt\":\"2026-04-14 21:46:53\",\"rateSource\":\"static_reference_snapshot\",\"rateSourceLabel\":\"Static public reference snapshot because no live recycler/platform pricing match is available\",\"recyclerBuyRateId\":null,\"recyclerId\":null,\"platformPricingSettingId\":null,\"recyclerRateCnyPerFaceValue\":null,\"platformFeePercent\":null,\"localCurrencyPerCny\":null},{\"code\":\"amazon-ca-25-2\",\"label\":\"Amazon Gift Card (CA) → Kenya payout → KES\",\"category\":\"Amazon\",\"region\":\"CA\",\"payoutCountry\":\"Kenya\","
+  }
+}

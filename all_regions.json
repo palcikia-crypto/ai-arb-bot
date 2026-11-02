@@ -1,0 +1,20 @@
+[
+  {
+    "region": "Turkey",
+    "price": 6.57,
+    "seller": "Робин Гуд ШОП",
+    "url": "https://plati.market/itm/4377178",
+    "profit": 1.93,
+    "profit_pct": 29.4,
+    "marker": "✅"
+  },
+  {
+    "region": "Argentina",
+    "price": 10.75,
+    "seller": "BEST-PRICE",
+    "url": "https://plati.market/itm/2655987",
+    "profit": -2.25,
+    "profit_pct": -20.9,
+    "marker": "❌"
+  }
+]
