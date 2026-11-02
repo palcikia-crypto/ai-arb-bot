@@ -20,12 +20,12 @@
                 const scamColor = item.is_scam ? 'text-red-400' : 'text-green-400';
                 c.innerHTML += `
                     <div class="bg-gray-800 p-4 rounded-lg border border-gray-700">
-                        <div class="flex justify-between items-start">
+                        <div class="flex flex-col sm:flex-row justify-between items-start gap-2">
                             <div>
                                 <h2 class="font-bold text-lg">${item.name}</h2>
                                 <p class="text-sm text-gray-400">${item.seller} | ${item.region}</p>
                             </div>
-                            <span class="bg-green-900 text-green-300 px-2 py-1 rounded text-sm font-bold">+${item.profit}$ (${item.pct}%)</span>
+                            <span class="bg-green-900 text-green-300 px-2 py-1 rounded text-sm font-bold whitespace-nowrap">+${item.profit}$ (${item.pct}%)</span>
                         </div>
                         <div class="mt-2 flex justify-between items-center text-sm">
                             <span>Купить: <b>$${item.price}</b> | Сдать: <b>$${item.sell_price}</b> (${item.rate}%)</span>
