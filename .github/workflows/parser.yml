@@ -3,26 +3,22 @@ on:
   schedule:
     - cron: '0 * * * *'
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths: [server_scanner.py, .github/workflows/parser.yml]
 
 jobs:
   run-scanner:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-      pages: write
-      id-token: write
     steps:
       - uses: actions/checkout@v4
-      - name: Setup Python
-        uses: actions/setup-python@v5
+      - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - name: Install dependencies
-        run: pip install requests
-      - name: Run Scanner
-        env:
-          HF_TOKEN: ${{ secrets.HF_TOKEN }}
-        run: python server_scanner.py
+      - run: pip install requests
+      - run: python server_scanner.py
       - name: Commit results
         run: |
           git config user.name "github-actions[bot]"

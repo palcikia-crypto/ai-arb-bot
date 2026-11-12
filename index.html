@@ -1,41 +1,126 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Arbitrage Scanner</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0b1020">
+<title>ArbHub · панель арбитража</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0b1020;--card:#121a30;--card2:#0e1526;--line:#1f2b4a;--txt:#e8edf7;--mut:#8b98b4;--acc:#4f8cff;--grn:#2fd48a;--yel:#ffc857;--red:#ff6b6b}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:radial-gradient(1200px 500px at 70% -10%,#16224a 0%,var(--bg) 60%);color:var(--txt);font-family:Inter,system-ui,sans-serif;padding:18px 12px 60px}
+.wrap{max-width:1080px;margin:0 auto}
+h1{font-size:26px;font-weight:800}
+h1 span{background:linear-gradient(90deg,#4f8cff,#2fd48a);-webkit-background-clip:text;background-clip:text;color:transparent}
+.sub{color:var(--mut);font-size:13px;margin-top:6px;line-height:1.5}
+.head{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;margin-bottom:18px}
+.pill{display:inline-block;font-size:11px;font-weight:600;padding:3px 10px;border-radius:99px;border:1px solid var(--line);color:var(--mut)}
+.pill.live{border-color:#1d5c3f;color:var(--grn);background:rgba(47,212,138,.08)}
+.pill.warn{border-color:#6b5a1d;color:var(--yel);background:rgba(255,200,87,.08)}
+.btn{display:inline-block;text-decoration:none;font-size:13px;font-weight:600;padding:9px 16px;border-radius:10px;border:1px solid var(--line);color:var(--txt);background:var(--card2)}
+.btn.primary{background:linear-gradient(90deg,#3b6fe0,#2fd48a);border:none;color:#04121f}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-bottom:18px}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px}
+.kpi .v{font-size:22px;font-weight:800;margin-top:4px}
+.kpi .l{font-size:11px;color:var(--mut);text-transform:uppercase;letter-spacing:.5px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px;margin-bottom:16px}
+.card h2{font-size:15px;margin-bottom:10px}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th{text-align:left;color:var(--mut);font-size:11px;text-transform:uppercase;padding:6px 8px;border-bottom:1px solid var(--line)}
+td{padding:8px;border-bottom:1px solid rgba(31,43,74,.5);vertical-align:top}
+tr:last-child td{border-bottom:none}
+.pos{color:var(--grn);font-weight:700}
+a{color:var(--acc)}
+.risk{display:inline-block;font-size:10px;color:var(--red);border:1px solid rgba(255,107,107,.4);border-radius:6px;padding:1px 6px;margin-top:2px}
+.foot{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
+.mut{color:var(--mut);font-size:12px}
+@media(max-width:640px){td,th{padding:6px 4px;font-size:12px}.hide-m{display:none}}
+</style>
 </head>
-<body class="bg-gray-900 text-white font-sans p-6">
-    <div class="max-w-4xl mx-auto">
-        <h1 class="text-2xl font-bold text-blue-400 mb-6">🤖 Панель Арбитража</h1>
-        <p class="text-gray-400 mb-4">Данные обновляются автоматически на серверах GitHub.</p>
-        <div id="content" class="space-y-4"></div>
-    </div>
-    <script>
-        fetch('results.json').then(r => r.json()).then(data => {
-            const c = document.getElementById('content');
-            if (!data.length) { c.innerHTML = '<p class="text-yellow-400">Связок пока нет, ждем следующий скан.</p>'; return; }
-            data.forEach(item => {
-                const scam = item.is_scam ? '⚠️ СКАМ' : '✅ БЕЗОПАСНО';
-                const scamColor = item.is_scam ? 'text-red-400' : 'text-green-400';
-                c.innerHTML += `
-                    <div class="bg-gray-800 p-4 rounded-lg border border-gray-700">
-                        <div class="flex flex-col sm:flex-row justify-between items-start gap-2">
-                            <div>
-                                <h2 class="font-bold text-lg">${item.name}</h2>
-                                <p class="text-sm text-gray-400">${item.seller} | ${item.region}</p>
-                            </div>
-                            <span class="bg-green-900 text-green-300 px-2 py-1 rounded text-sm font-bold whitespace-nowrap">+${item.profit}$ (${item.pct}%)</span>
-                        </div>
-                        <div class="mt-2 flex justify-between items-center text-sm">
-                            <span>Купить: <b>$${item.price}</b> | Сдать: <b>$${item.sell_price}</b> (${item.rate}%)</span>
-                            <span class="${scamColor} font-bold">${scam}</span>
-                        </div>
-                        <a href="${item.url}" target="_blank" class="mt-2 block text-center bg-blue-600 hover:bg-blue-700 py-1 rounded text-sm mt-3">Открыть лот</a>
-                    </div>
-                `;
-            });
-        }).catch(() => { document.getElementById('content').innerHTML = '<p class="text-red-400">Ошибка загрузки данных.</p>'; });
-    </script>
+<body>
+<div class="wrap">
+<div class="head">
+  <div>
+    <h1>⚡ Arb<span>Hub</span></h1>
+    <div class="sub">единая панель арбитража: подарочные карты + GPU-инференс · всё считается на серверах GitHub, бесплатно</div>
+  </div>
+  <a class="btn primary" href="https://vast.ai/account/credits" target="_blank">💳 Пополнить Vast.ai</a>
+</div>
+
+<div class="kpis">
+  <div class="kpi"><div class="l">Лучший профит</div><div class="v pos" id="k_profit">…</div></div>
+  <div class="kpi"><div class="l">Лучшая маржа %</div><div class="v" id="k_pct">…</div></div>
+  <div class="kpi"><div class="l">GPU маржа/ч (arb-lab)</div><div class="v" id="k_gpu">…</div></div>
+  <div class="kpi"><div class="l">Обновлено</div><div class="v" style="font-size:14px" id="k_upd">…</div></div>
+</div>
+
+<div class="card">
+  <h2>🎁 Подарочные карты: покупка plati.market → продажа скупщику <span class="pill" id="rate_pill">…</span></h2>
+  <div id="gc_table">загрузка…</div>
+  <div class="mut" style="margin-top:8px">Сканер работает каждый час сам. Важно: проверяй лот перед покупкой (рейтинг продавца, отзывы), скупщик платит криптой, порог вывода обычно $20-50.</div>
+</div>
+
+<div class="card">
+  <h2>🖥 GPU-инференс: дешёвая аренда → токены → OpenRouter <span class="pill live">данные arb-lab</span></h2>
+  <div id="gpu_best">загрузка…</div>
+  <div style="margin-top:10px" id="gpu_deals" class="mut"></div>
+  <div class="foot">
+    <a class="btn" href="https://palcikia-crypto.github.io/arb-lab/" target="_blank">Панель arb-lab</a>
+    <a class="btn" href="https://github.com/palcikia-crypto/arb-lab/blob/main/docs/launch_guide.md" target="_blank">Гайд запуска</a>
+    <a class="btn" href="https://openrouter.ai/providers/apply" target="_blank">OpenRouter Providers</a>
+  </div>
+</div>
+
+<div class="card">
+  <h2>📚 Треки заработка</h2>
+  <table>
+    <tr><th>Трек</th><th>Нужно</th><th>Статус</th></tr>
+    <tr><td>🎁 Гифт-карты (эта панель)</td><td>$10-20 старт, кошелёк крипты</td><td class="pos">живой сканер</td></tr>
+    <tr><td>🖥 GPU-инференс (arb-lab)</td><td>топ-ап $20-50 на Vast.ai</td><td class="pos">готов на 100%</td></tr>
+    <tr><td>🔫 Скины CS2 (pm_lab-сканеры)</td><td>следующий этап</td><td class="mut">в разработке</td></tr>
+  </table>
+</div>
+
+<div class="mut" id="upd_line">…</div>
+</div>
+<script>
+function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];})};function money(x){return (x==null||isNaN(x))?'—':'$'+(+x).toFixed(2)};
+function fetchJSON(url){return fetch(url+(url.indexOf('?')<0?'?':'&')+'t='+Date.now()).then(function(r){return r.text()}).then(function(t){return JSON.parse(t.replace(/[\u0000-\u001f]+/g,' '))});}
+var RAW='https://raw.githubusercontent.com/palcikia-crypto/', CDN='https://cdn.jsdelivr.net/gh/palcikia-crypto/';
+function load(u){return fetchJSON(RAW+u).catch(function(){return fetchJSON(CDN+u)})}
+function fmtAgo(iso){var d=new Date(iso);var m=Math.round((Date.now()-d.getTime())/60000);return m<1?'только что':(m<60?m+' мин назад':Math.round(m/60)+' ч назад')}
+
+function loadGC(){
+  load('ai-arb-bot/main/results.json').then(function(d){
+    var o=d.offers||[];
+    var p=document.getElementById('rate_pill');
+    p.textContent=d.rate_live?('курс '+d.rate_pct+'% · живой'):('курс '+d.rate_pct+'% · ≈ запасной');
+    p.className='pill '+(d.rate_live?'live':'warn');
+    document.getElementById('k_profit').textContent=o.length?('$'+o[0].profit):'—';
+    document.getElementById('k_pct').textContent=o.length?(o[0].pct+'%'):'—';
+    document.getElementById('k_upd').textContent=fmtAgo(d.updated_at);
+    var h='<table><tr><th>Категория</th><th>Лот</th><th class="hide-m">Продавец</th><th>Куплю</th><th>Продам</th><th>Профит</th></tr>';
+    h+=o.map(function(x){
+      return '<tr><td>'+esc(x.category)+'</td><td><a href="'+esc(x.url)+'" target="_blank">'+esc(x.name)+'</a>'+(x.risk?'<div class="risk">⚠ '+esc(x.risk)+'</div>':'')+'</td><td class="hide-m">'+esc(x.seller||'—')+'</td><td>'+money(x.price)+'</td><td>'+money(x.sell_price)+'</td><td class="pos">+'+money(x.profit)+' <span class="mut">('+x.pct+'%)</span></td></tr>';
+    }).join('');
+    if(!o.length)h+='<tr><td colspan="6" class="mut">прибыльных лотов сейчас нет — сканер проверяет каждый час</td></tr>';
+    document.getElementById('gc_table').innerHTML=h+'</table>';
+  }).catch(function(){document.getElementById('gc_table').innerHTML='<span class="mut">нет данных</span>'});
+}
+function loadGPU(){
+  load('arb-lab/main/data/market.json').then(function(d){
+    var b=(d.best||[]).slice(0,5);
+    document.getElementById('k_gpu').textContent=b.length?('+$'+b[0].margin_hr.toFixed(1)+'/ч'):'—';
+    var h='<table><tr><th>Модель</th><th>GPU</th><th>Выручка/ч</th><th>Аренда/ч</th><th>Маржа/ч</th></tr>';
+    h+=b.map(function(x){return '<tr><td>'+esc((x.model||'').split('/')[1]||x.model)+'</td><td>'+esc(x.gpu)+'</td><td>'+money(x.rev_hr)+'</td><td>'+money(x.rent_hr)+'</td><td class="pos">+'+money(x.margin_hr)+'</td></tr>'}).join('');
+    document.getElementById('gpu_best').innerHTML=h+'</table>';
+    var dl=(d.deals||[]).slice(0,3).map(function(x){return esc(x.gpu)+' '+money(x.price)+'/ч (ID '+x.id+')'}).join(' · ');
+    document.getElementById('gpu_deals').textContent=dl?('🔥 Спот-оффера Vast: '+dl):'';
+  }).catch(function(){document.getElementById('gpu_best').innerHTML='<span class="mut">нет данных</span>'});
+}
+function refreshAll(){loadGC();loadGPU();document.getElementById('upd_line').textContent='обновлено '+new Date().toLocaleString('ru-RU')+' · автообновление каждые 5 мин';}
+refreshAll();setInterval(refreshAll,300000);
+</script>
 </body>
 </html>
