@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-12T08:19:34Z",
+ "updated_at": "2026-11-12T08:29:36Z",
  "keys": {
   "offers": [
    {
@@ -9,21 +9,21 @@
     "url": "https://plati.market/itm/4266181",
     "source": "Digiseller",
     "venue": "Steam",
-    "profit": 0.18,
-    "pct": 11.1
+    "profit": 0.19,
+    "pct": 11.7
    }
   ],
-  "sell_price": 2.12,
+  "sell_price": 2.13,
   "venue": "Steam",
-  "net_sell": 1.8,
+  "net_sell": 1.81,
   "status": "ok"
  },
  "skins": [
   {
    "skin": "AK-47 | Redline (Field-Tested)",
-   "sell_price": 31.75,
+   "sell_price": 31.68,
    "venue": "Steam",
-   "net_sell": 26.99,
+   "net_sell": 26.93,
    "status": "дешёвого лота на площадках нет"
   },
   {

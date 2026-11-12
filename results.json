@@ -1,8 +1,8 @@
 {
- "updated_at": "2026-11-12T08:19:34Z",
+ "updated_at": "2026-11-12T08:29:36Z",
  "rate_pct": 78,
- "rate_source": "HighCardRate (живой курс)",
- "rate_live": true,
+ "rate_source": "запасная оценка: сайт скупщика не ответил",
+ "rate_live": false,
  "offers": [
   {
    "category": "Xbox USA 10",
@@ -15,7 +15,7 @@
    "profit": 2.67,
    "pct": 52.0,
    "risk": null,
-   "source_rate": "HighCardRate (живой курс)",
+   "source_rate": "запасная оценка: сайт скупщика не ответил",
    "url": "https://plati.market/itm/5437975"
   },
   {
@@ -29,7 +29,7 @@
    "profit": 2.6,
    "pct": 50.0,
    "risk": null,
-   "source_rate": "HighCardRate (живой курс)",
+   "source_rate": "запасная оценка: сайт скупщика не ответил",
    "url": "https://plati.market/itm/5811010"
   },
   {
@@ -43,7 +43,7 @@
    "profit": 4.7,
    "pct": 43.1,
    "risk": null,
-   "source_rate": "HighCardRate (живой курс)",
+   "source_rate": "запасная оценка: сайт скупщика не ответил",
    "url": "https://plati.market/itm/5411964"
   },
   {
@@ -57,7 +57,7 @@
    "profit": 1.23,
    "pct": 18.7,
    "risk": null,
-   "source_rate": "HighCardRate (живой курс)",
+   "source_rate": "запасная оценка: сайт скупщика не ответил",
    "url": "https://plati.market/itm/4377178"
   }
  ]
