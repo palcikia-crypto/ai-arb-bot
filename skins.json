@@ -1,41 +1,68 @@
 {
- "updated_at": "2026-11-12T08:05:16Z",
+ "updated_at": "2026-11-12T08:07:56Z",
  "keys": {
   "offers": [],
-  "steam_price": null
+  "sell_price": 2.13,
+  "venue": "Steam",
+  "net_sell": 1.81,
+  "status": "дешёвого ключа на plati нет (нужно дешевле $1.81)"
  },
  "skins": [
   {
    "skin": "AK-47 | Redline (Field-Tested)",
-   "status": "нет цены Steam"
+   "sell_price": 31.75,
+   "venue": "Steam",
+   "net_sell": 26.99,
+   "status": "дешёвого лота на plati нет"
   },
   {
    "skin": "AWP | Asiimov (Field-Tested)",
-   "status": "нет цены Steam"
+   "sell_price": 126.45,
+   "venue": "Steam",
+   "net_sell": 107.48,
+   "status": "дешёвого лота на plati нет"
   },
   {
    "skin": "AK-47 | Slate (Field-Tested)",
-   "status": "нет цены Steam"
+   "sell_price": 4.83,
+   "venue": "Steam",
+   "net_sell": 4.11,
+   "status": "дешёвого лота на plati нет"
   },
   {
    "skin": "AWP | Neo-Noir (Field-Tested)",
-   "status": "нет цены Steam"
+   "sell_price": 45.85,
+   "venue": "Steam",
+   "net_sell": 38.97,
+   "status": "дешёвого лота на plati нет"
   },
   {
    "skin": "M4A1-S | Hyper Beast (Field-Tested)",
-   "status": "нет цены Steam"
+   "sell_price": 134.0,
+   "venue": "Steam",
+   "net_sell": 113.9,
+   "status": "дешёвого лота на plati нет"
   },
   {
    "skin": "Desert Eagle | Blaze (Factory New)",
-   "status": "нет цены Steam"
+   "sell_price": 736.18,
+   "venue": "Steam",
+   "net_sell": 625.75,
+   "status": "дешёвого лота на plati нет"
   },
   {
    "skin": "Glock-18 | Fade (Factory New)",
-   "status": "нет цены Steam"
+   "sell_price": 1655.51,
+   "venue": "Steam",
+   "net_sell": 1407.18,
+   "status": "дешёвого лота на plati нет"
   },
   {
    "skin": "USP-S | Kill Confirmed (Field-Tested)",
-   "status": "нет цены Steam"
+   "sell_price": 73.0,
+   "venue": "Steam",
+   "net_sell": 62.05,
+   "status": "дешёвого лота на plati нет"
   }
  ]
 }
