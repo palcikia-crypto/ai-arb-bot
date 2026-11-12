@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-12T09:09:07Z",
+ "updated_at": "2026-11-12T17:52:37Z",
  "keys": {
   "offers": [
    {
@@ -21,37 +21,37 @@
  "skins": [
   {
    "skin": "AK-47 | Redline (Field-Tested)",
-   "sell_price": 31.68,
+   "sell_price": 31.54,
    "venue": "Steam",
-   "net_sell": 26.93,
+   "net_sell": 26.81,
    "status": "дешёвого лота на площадках нет"
   },
   {
    "skin": "AWP | Asiimov (Field-Tested)",
-   "sell_price": 126.45,
+   "sell_price": 126.0,
    "venue": "Steam",
-   "net_sell": 107.48,
+   "net_sell": 107.1,
    "status": "дешёвого лота на площадках нет"
   },
   {
    "skin": "AK-47 | Slate (Field-Tested)",
-   "sell_price": 4.88,
+   "sell_price": 4.91,
    "venue": "Steam",
-   "net_sell": 4.15,
+   "net_sell": 4.17,
    "status": "дешёвого лота на площадках нет"
   },
   {
    "skin": "AWP | Neo-Noir (Field-Tested)",
-   "sell_price": 45.85,
+   "sell_price": 46.42,
    "venue": "Steam",
-   "net_sell": 38.97,
+   "net_sell": 39.46,
    "status": "дешёвого лота на площадках нет"
   },
   {
    "skin": "M4A1-S | Hyper Beast (Field-Tested)",
-   "sell_price": 134.0,
+   "sell_price": 134.98,
    "venue": "Steam",
-   "net_sell": 113.9,
+   "net_sell": 114.73,
    "status": "дешёвого лота на площадках нет"
   },
   {
@@ -70,9 +70,9 @@
   },
   {
    "skin": "USP-S | Kill Confirmed (Field-Tested)",
-   "sell_price": 73.0,
+   "sell_price": 75.41,
    "venue": "Steam",
-   "net_sell": 62.05,
+   "net_sell": 64.1,
    "status": "дешёвого лота на площадках нет"
   }
  ]
