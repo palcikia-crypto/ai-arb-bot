@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
   push:
     branches: [main]
-    paths: [server_scanner.py, .github/workflows/parser.yml]
+    paths: [server_scanner.py, market_scanner.py, .github/workflows/parser.yml]
 
 jobs:
   run-scanner:
@@ -19,10 +19,11 @@ jobs:
           python-version: '3.11'
       - run: pip install requests
       - run: python server_scanner.py
+      - run: python market_scanner.py
       - name: Commit results
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add results.json index.html
+          git add results.json skins.json index.html
           git commit -m "Update results & UI $(date -u)" || echo "No changes"
           git push
