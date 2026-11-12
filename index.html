@@ -93,13 +93,14 @@ function fmtAgo(iso){var d=new Date(iso);var m=Math.round((Date.now()-d.getTime(
 
 function loadGC(){
   load('ai-arb-bot/main/results.json').then(function(d){
+    if(Array.isArray(d)){d={offers:d.filter(function(x){return !x.is_scam}),rate_live:false,rate_pct:78,updated_at:null,old_schema:true};}
     var o=d.offers||[];
     var p=document.getElementById('rate_pill');
     p.textContent=d.rate_live?('курс '+d.rate_pct+'% · живой'):('курс '+d.rate_pct+'% · ≈ запасной');
     p.className='pill '+(d.rate_live?'live':'warn');
     document.getElementById('k_profit').textContent=o.length?('$'+o[0].profit):'—';
     document.getElementById('k_pct').textContent=o.length?(o[0].pct+'%'):'—';
-    document.getElementById('k_upd').textContent=fmtAgo(d.updated_at);
+    document.getElementById('k_upd').textContent=d.updated_at?fmtAgo(d.updated_at):'—';
     var h='<table><tr><th>Категория</th><th>Лот</th><th class="hide-m">Продавец</th><th>Куплю</th><th>Продам</th><th>Профит</th></tr>';
     h+=o.map(function(x){
       return '<tr><td>'+esc(x.category)+'</td><td><a href="'+esc(x.url)+'" target="_blank">'+esc(x.name)+'</a>'+(x.risk?'<div class="risk">⚠ '+esc(x.risk)+'</div>':'')+'</td><td class="hide-m">'+esc(x.seller||'—')+'</td><td>'+money(x.price)+'</td><td>'+money(x.sell_price)+'</td><td class="pos">+'+money(x.profit)+' <span class="mut">('+x.pct+'%)</span></td></tr>';
