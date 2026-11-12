@@ -1,4 +1,4 @@
-import requests, re, json, time  # v3.1 soft-risk
+import requests, re, json, time  # v3.2 soft-risk
 
 HEADERS = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/131.0.0.0 Safari/537.36"}
 PLATI = "https://plati.io/api/search.ashx"
@@ -18,7 +18,7 @@ RISK_WORDS = ["не весь мир", "только для", "конкретн",
 def get_live_rate():
     try:
         r = requests.get("https://highcardrate.com/blog/sell-gift-cards-for-bitcoin-btc-guide", headers=HEADERS, timeout=15)
-        m = re.search(r'Steam[^0-9%]{0,50}(d{2})s*%', r.text, re.IGNORECASE)
+        m = re.search(r'Steam[^0-9%]{0,50}(\d{2})\s*%', r.text, re.IGNORECASE)
         if m: return int(m.group(1)), "HighCardRate (живой курс)", True
     except Exception:
         pass
@@ -33,7 +33,7 @@ def is_risky(name, region):
     return None
 
 def soft_risk(name):
-    if re.search(r'd+s*[-–]s*d+', name):
+    if re.search(r'\d+\s*[-–]\s*\d+', name):
         return "в названии диапазон номиналов — проверь, что цена именно за нужную сумму"
     return None
 
@@ -46,7 +46,7 @@ def check_lot(it, match_words, nominal, region, sell_max):
     except Exception: return None
     nl = name.lower()
     if not all(w in nl for w in match_words): return None
-    digits = re.findall(r'(d+)', name)
+    digits = re.findall(r'(\d+)', name)
     if str(nominal) not in digits and str(nominal) not in nl: return None
     if p < nominal * 0.5 or p > sell_max: return None
     return {"name": name[:70], "price": p, "seller": it.get("seller_name", ""), "url": url}
