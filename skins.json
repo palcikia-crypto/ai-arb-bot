@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-12T17:52:37Z",
+ "updated_at": "2026-11-12T23:07:52Z",
  "keys": {
   "offers": [
    {
@@ -9,42 +9,42 @@
     "url": "https://plati.market/itm/4266181",
     "source": "Digiseller",
     "venue": "Steam",
-    "profit": 0.18,
-    "pct": 11.1
+    "profit": 0.22,
+    "pct": 13.6
    }
   ],
-  "sell_price": 2.12,
+  "sell_price": 2.16,
   "venue": "Steam",
-  "net_sell": 1.8,
+  "net_sell": 1.84,
   "status": "ok"
  },
  "skins": [
   {
    "skin": "AK-47 | Redline (Field-Tested)",
-   "sell_price": 31.54,
+   "sell_price": 30.74,
    "venue": "Steam",
-   "net_sell": 26.81,
+   "net_sell": 26.13,
    "status": "дешёвого лота на площадках нет"
   },
   {
    "skin": "AWP | Asiimov (Field-Tested)",
-   "sell_price": 126.0,
+   "sell_price": 115.66,
    "venue": "Steam",
-   "net_sell": 107.1,
+   "net_sell": 98.31,
    "status": "дешёвого лота на площадках нет"
   },
   {
    "skin": "AK-47 | Slate (Field-Tested)",
-   "sell_price": 4.91,
+   "sell_price": 4.72,
    "venue": "Steam",
-   "net_sell": 4.17,
+   "net_sell": 4.01,
    "status": "дешёвого лота на площадках нет"
   },
   {
    "skin": "AWP | Neo-Noir (Field-Tested)",
-   "sell_price": 46.42,
+   "sell_price": 47.0,
    "venue": "Steam",
-   "net_sell": 39.46,
+   "net_sell": 39.95,
    "status": "дешёвого лота на площадках нет"
   },
   {
@@ -56,23 +56,23 @@
   },
   {
    "skin": "Desert Eagle | Blaze (Factory New)",
-   "sell_price": 736.18,
+   "sell_price": 748.57,
    "venue": "Steam",
-   "net_sell": 625.75,
+   "net_sell": 636.28,
    "status": "дешёвого лота на площадках нет"
   },
   {
    "skin": "Glock-18 | Fade (Factory New)",
-   "sell_price": 1655.51,
+   "sell_price": 1634.23,
    "venue": "Steam",
-   "net_sell": 1407.18,
+   "net_sell": 1389.1,
    "status": "дешёвого лота на площадках нет"
   },
   {
    "skin": "USP-S | Kill Confirmed (Field-Tested)",
-   "sell_price": 75.41,
+   "sell_price": 75.24,
    "venue": "Steam",
-   "net_sell": 64.1,
+   "net_sell": 63.95,
    "status": "дешёвого лота на площадках нет"
   }
  ]

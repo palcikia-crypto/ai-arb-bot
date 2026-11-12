@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-12T17:52:37Z",
+ "updated_at": "2026-11-12T23:07:52Z",
  "rate_pct": 78,
  "rate_source": "HighCardRate (живой курс)",
  "rate_live": true,
@@ -9,11 +9,11 @@
    "name": "Подарочная карта Xbox Live (США) | 1–100 долларов США |",
    "seller": "flash247",
    "source": "Digiseller",
-   "price": 5.13,
+   "price": 5.11,
    "nominal": 10,
    "sell_price": 7.8,
-   "profit": 2.67,
-   "pct": 52.0,
+   "profit": 2.69,
+   "pct": 52.6,
    "risk": "в названии диапазон номиналов — проверь, что цена именно за нужную сумму",
    "source_rate": "HighCardRate (живой курс)",
    "url": "https://plati.market/itm/5437975"
