@@ -1,20 +1,63 @@
 {
- "updated_at": "2026-11-12T08:07:56Z",
+ "updated_at": "2026-11-12T08:19:34Z",
  "rate_pct": 78,
  "rate_source": "HighCardRate (живой курс)",
  "rate_live": true,
  "offers": [
   {
+   "category": "Xbox USA 10",
+   "name": "Подарочная карта Xbox Live (США) | 1–100 долларов США |",
+   "seller": "flash247",
+   "source": "Digiseller",
+   "price": 5.13,
+   "nominal": 10,
+   "sell_price": 7.8,
+   "profit": 2.67,
+   "pct": 52.0,
+   "risk": null,
+   "source_rate": "HighCardRate (живой курс)",
+   "url": "https://plati.market/itm/5437975"
+  },
+  {
+   "category": "Nintendo 10",
+   "name": "Nintendo eShop  5-10-20-35-50-100$ USD США  Подарочная карта  авто",
+   "seller": "cdk-king",
+   "source": "plati.market",
+   "price": 5.2,
+   "nominal": 10,
+   "sell_price": 7.8,
+   "profit": 2.6,
+   "pct": 50.0,
+   "risk": null,
+   "source_rate": "HighCardRate (живой курс)",
+   "url": "https://plati.market/itm/5811010"
+  },
+  {
+   "category": "Nintendo 20",
+   "name": "🧡 Nintendo eShop GIft Card 💳 10/20/50/100 USD 🌍 США",
+   "seller": "LOOTIFY",
+   "source": "plati.market",
+   "price": 10.9,
+   "nominal": 20,
+   "sell_price": 15.6,
+   "profit": 4.7,
+   "pct": 43.1,
+   "risk": null,
+   "source_rate": "HighCardRate (живой курс)",
+   "url": "https://plati.market/itm/5411964"
+  },
+  {
    "category": "Steam Turkey 10",
    "name": "🔥STEAM GIFT CARD🔥10-75$ USD⚡️ТУРЦИЯ⚡️АВТОДОСТАВКА",
    "seller": "Робин Гуд ШОП",
+   "source": "plati.market",
    "price": 6.57,
    "nominal": 10,
    "sell_price": 7.8,
    "profit": 1.23,
    "pct": 18.7,
    "risk": null,
-   "source": "HighCardRate (живой курс)",
+   "source_rate": "HighCardRate (живой курс)",
    "url": "https://plati.market/itm/4377178"
   }
  ]
