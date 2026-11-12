@@ -1,15 +1,21 @@
-[
+{
+ "updated_at": "2026-11-12T05:35:49Z",
+ "rate_pct": 78,
+ "rate_source": "HighCardRate (живой курс)",
+ "rate_live": true,
+ "offers": [
   {
-    "category": "Steam Turkey 10",
-    "name": "🔥STEAM GIFT CARD🔥10-75$ USD⚡️ТУРЦИЯ⚡️АВТОДОСТАВКА",
-    "seller": "Робин Гуд ШОП",
-    "price": 6.57,
-    "sell_price": 7.8,
-    "profit": 1.23,
-    "pct": 18.7,
-    "rate": 78,
-    "source": "HighCardRate",
-    "url": "https://plati.market/itm/4377178",
-    "is_scam": false
+   "category": "Steam Turkey 10",
+   "name": "🔥STEAM GIFT CARD🔥10-75$ USD⚡️ТУРЦИЯ⚡️АВТОДОСТАВКА",
+   "seller": "Робин Гуд ШОП",
+   "price": 6.57,
+   "nominal": 10,
+   "sell_price": 7.8,
+   "profit": 1.23,
+   "pct": 18.7,
+   "risk": null,
+   "source": "HighCardRate (живой курс)",
+   "url": "https://plati.market/itm/4377178"
   }
-]
+ ]
+}
