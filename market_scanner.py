@@ -2,9 +2,9 @@ import requests, re, json, time
 
 HEADERS = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/131.0.0.0 Safari/537.36", "Accept-Encoding": "br, gzip"}
 PLATI = "https://plati.io/api/search.ashx"
+DIGI = "https://api.digiseller.ru/api/products/search2"
 STEAM = "https://steamcommunity.com/market/priceoverview/"
 SKINPORT = "https://api.skinport.com/v1/items"
-# комиссия: продавец получает ~85% на Steam (~15%), ~88% на Skinport (12%)
 NET_STEAM = 0.85
 NET_SKINPORT = 0.88
 
@@ -19,11 +19,10 @@ SKINS = [
     "Glock-18 | Fade (Factory New)",
     "USP-S | Kill Confirmed (Field-Tested)",
 ]
-
 cache = {}
 
 def steam_price(appid, name):
-    for attempt in range(3):
+    for _ in range(3):
         try:
             r = requests.get(STEAM, params={"appid": appid, "currency": 1, "cc": "us", "market_hash_name": name}, headers=HEADERS, timeout=12)
             if r.status_code == 429:
@@ -50,29 +49,49 @@ def skinport_map(app_id):
     return m
 
 def sell_side(app_id, name):
-    """(цена продажи, площадка, коэфф. на руки) или None."""
-    sp = steam_price(app_id, name)
+    sp = steam_price(appid if False else app_id, name)
     if sp: return sp, "Steam", NET_STEAM
     sk = skinport_map(app_id).get(name)
     if sk: return sk, "Skinport", NET_SKINPORT
     return None
 
-def plati_cheapest(query, match_words, price_min, price_max):
+def buy_best(query, match_words, sell_max):
+    cands = []
     params = {"query": query, "pagesize": 50, "pagenum": 1, "visibleOnly": "true", "response": "json"}
     try:
         items = requests.get(PLATI, params=params, headers=HEADERS, timeout=25).json().get("items", [])
+        for it in items:
+            lot = _lot(it, match_words, sell_max)
+            if lot: cands.append((lot, "plati.market"))
     except Exception:
-        return None
-    best = None
-    for it in items:
-        nm = (it.get("name") or "").lower()
-        price = it.get("price_usd"); url = it.get("url")
-        if not price or not url: continue
-        if not all(w.lower() in nm for w in match_words): continue
-        if not (price_min <= float(price) <= price_max): continue
-        if best is None or float(price) < best["price"]:
-            best = {"name": it.get("name","")[:70], "price": float(price), "seller": it.get("seller_name",""), "url": url}
-    return best
+        pass
+    time.sleep(1)
+    dparams = {"query": query, "pagesize": 40, "pagenum": 1, "lang": "ru-RU"}
+    try:
+        data = requests.get(DIGI, params=dparams, headers=HEADERS, timeout=25).json()
+        for it in ((data.get("items") or {}).get("item", []) or []):
+            if not it.get("url"):
+                it["url"] = "https://plati.market/itm/" + str(it.get("id", ""))
+            lot = _lot(it, match_words, sell_max)
+            if lot: cands.append((lot, "Digiseller"))
+    except Exception:
+        pass
+    if not cands: return None
+    return min(cands, key=lambda c: c[0]["price"])
+
+def _lot(it, match_words, sell_max):
+    name = (it.get("name") or "")
+    price = it.get("price_usd")
+    url = it.get("url")
+    if not price or not url: return None
+    try: p = float(str(price).replace(",", "."))
+    except Exception: return None
+    nl = name.lower()
+    if not all(w.lower() in nl for w in match_words): return None
+    if p < 0.3 or p > sell_max: return None
+    for bad in ("пополнение", "пополнени", "баланс", "balance", "guide", "гайд", "инструкция"):
+        if bad in nl: return None
+    return {"name": name[:70], "price": p, "seller": it.get("seller_name", ""), "url": url}
 
 def scan_keys(out):
     s = sell_side(440, KEY_STEAM_NAME)
@@ -82,12 +101,13 @@ def scan_keys(out):
     price, venue, netk = s
     net = round(price * netk, 2)
     out["keys"].update({"sell_price": price, "venue": venue, "net_sell": net, "status": "ok"})
-    lot = plati_cheapest("ключ mann co supply crate tf2", ["mann"], max(1.0, net * 0.5), net * 0.98)
-    if lot:
+    got = buy_best("ключ mann co supply crate tf2", ["mann"], net * 0.98)
+    if got:
+        lot, src = got
         profit = round(net - lot["price"], 2)
-        out["keys"]["offers"] = [{**lot, "venue": venue, "profit": profit, "pct": round(profit / lot["price"] * 100, 1)}]
+        out["keys"]["offers"] = [{**lot, "source": src, "venue": venue, "profit": profit, "pct": round(profit / lot["price"] * 100, 1)}]
     else:
-        out["keys"]["status"] = "дешёвого ключа на plati нет (нужно дешевле $" + str(net) + ")"
+        out["keys"]["status"] = "дешёвого ключа на площадках нет (нужно дешевле $" + str(net) + ")"
 
 def scan_skins(out):
     for skin in SKINS:
@@ -101,12 +121,13 @@ def scan_skins(out):
         words = [w for w in re.split(r"\s*\|\s*|\s*\(\s*|\)\s*", skin) if w][:3]
         words = [w for w in words if not w.lower().startswith(("field", "factory", "minimal", "well", "battle"))][:2]
         entry = {"skin": skin, "sell_price": price, "venue": venue, "net_sell": round(net, 2), "status": "ok"}
-        lot = plati_cheapest(skin, words, max(0.5, net * 0.35), net * 0.98) if words else None
-        if lot:
+        got = buy_best(skin, words, net * 0.98) if words else None
+        if got:
+            lot, src = got
             profit = round(net - lot["price"], 2)
-            entry.update({"buy": lot, "profit": profit, "pct": round(profit / lot["price"] * 100, 1)})
+            entry.update({"buy": lot, "source": src, "profit": profit, "pct": round(profit / lot["price"] * 100, 1)})
         else:
-            entry["status"] = "дешёвого лота на plati нет"
+            entry["status"] = "дешёвого лота на площадках нет"
         out["skins"].append(entry)
         time.sleep(2)
 

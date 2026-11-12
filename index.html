@@ -42,7 +42,7 @@ a{color:var(--acc)}
 <div class="head">
   <div>
     <h1>⚡ Arb<span>Hub</span></h1>
-    <div class="sub">панель арбитража игровых цен: подарочные карты · TF2-ключи · скины CS2 · работает сама на серверах GitHub, бесплатно</div>
+    <div class="sub">панель арбитража игровых цен: гифт-карты · TF2-ключи · скины CS2 · покупка на plati.market и Digiseller, продажа на Steam / Skinport / скупщике · работает сама, бесплатно</div>
   </div>
   <a class="btn primary" href="https://github.com/palcikia-crypto/ai-arb-bot/actions" target="_blank">▶ Статус сканера</a>
 </div>
@@ -55,28 +55,28 @@ a{color:var(--acc)}
 </div>
 
 <div class="card">
-  <h2>🎁 Подарочные карты: plati.market → скупщик <span class="pill" id="rate_pill">…</span></h2>
+  <h2>🎁 Подарочные карты: plati.market / Digiseller → скупщик <span class="pill" id="rate_pill">…</span></h2>
   <div id="gc_table">загрузка…</div>
   <div class="mut" style="margin-top:8px">Сканер сам проверяет цены каждый час. Перед покупкой смотри рейтинг продавца и отзывы на plati. Скупщик платит криптой, порог вывода обычно $20-50.</div>
 </div>
 
 <div class="card">
-  <h2>🔑 TF2-ключи: plati.market → продажа <span class="pill" id="key_pill">…</span></h2>
+  <h2>🔑 TF2-ключи: plati.market / Digiseller → продажа <span class="pill" id="key_pill">…</span></h2>
   <div id="key_table">загрузка…</div>
   <div class="mut" style="margin-top:8px">Ключ Mann Co. — самая ликвидная валюта Steam (десятки тысяч продаж в сутки). «На руки» = цена после комиссии площадки. Если Steam закрыт, сканер берёт цену Skinport и помечает это.</div>
 </div>
 
 <div class="card">
-  <h2>🔫 Скины CS2: plati.market → продажа <span class="pill" id="skin_pill">…</span></h2>
+  <h2>🔫 Скины CS2: plati.market / Digiseller → продажа <span class="pill" id="skin_pill">…</span></h2>
   <div id="skin_table">загрузка…</div>
-  <div class="mut" style="margin-top:8px">Топ ликвидных скинов. «Нет лота» = на plati сейчас нет предложения дешевле цены продажи, это честно. Сканер проверяет каждый час, спреды появляются волнами.</div>
+  <div class="mut" style="margin-top:8px">Топ ликвидных скинов. «Нет лота» = ни на plati, ни на Digiseller нет предложения дешевле цены продажи, это честно. Сканер проверяет каждый час, спреды появляются волнами.</div>
 </div>
 
 <div class="mut" id="upd_line">…</div>
 </div>
 <script>
 function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];})};function money(x){return (x==null||isNaN(x))?'—':'$'+(+x).toFixed(2)};
-function fetchJSON(u){return fetch(u+(u.indexOf('?')<0?'?':'&')+'t='+Date.now()).then(function(r){return r.text()}).then(function(t){return JSON.parse(t.replace(/[\u0000-\u001f]+/g,' '))})}
+function fetchJSON(u){return fetch(u+(u.indexOf('?')<0?'?':'&')+'t='+Date.now()).then(function(r){return r.text()}).then(function(t){return JSON.parse(t.replace(/[\-\]+/g,' '))})}
 var RAW='https://raw.githubusercontent.com/palcikia-crypto/', CDN='https://cdn.jsdelivr.net/gh/palcikia-crypto/';
 function load(u){return fetchJSON(RAW+u).catch(function(){return fetchJSON(CDN+u)})}
 function fmtAgo(iso){var d=new Date(iso);var m=Math.round((Date.now()-d.getTime())/60000);return m<1?'только что':(m<90?m+' мин назад':Math.round(m/60)+' ч назад')}
@@ -91,7 +91,7 @@ function loadGC(){
     document.getElementById('k_pct').textContent=o.length?(o[0].pct+'%'):'—';
     document.getElementById('k_upd').textContent=d.updated_at?fmtAgo(d.updated_at):'—';
     var h='<table><tr><th>Категория</th><th>Лот</th><th class="hide-m">Продавец</th><th>Куплю</th><th>Продам</th><th>Профит</th></tr>';
-    h+=o.map(function(x){return '<tr><td>'+esc(x.category)+'</td><td><a href="'+esc(x.url)+'" target="_blank">'+esc(x.name)+'</a>'+(x.risk?'<div class="risk">⚠ '+esc(x.risk)+'</div>':'')+'</td><td class="hide-m">'+esc(x.seller||'—')+'</td><td>'+money(x.price)+'</td><td>'+money(x.sell_price)+'</td><td class="pos">+'+money(x.profit)+' <span class="mut">('+x.pct+'%)</span></td></tr>'}).join('');
+    h+=o.map(function(x){return '<tr><td>'+esc(x.category)+'</td><td><a href="'+esc(x.url)+'" target="_blank">'+esc(x.name)+'</a>'+(x.risk?'<div class="risk">⚠ '+esc(x.risk)+'</div>':'')+((x.source)?'<div class="mut">🛒 '+esc(x.source)+'</div>':'')+'</td><td class="hide-m">'+esc(x.seller||'—')+'</td><td>'+money(x.price)+'</td><td>'+money(x.sell_price)+'</td><td class="pos">+'+money(x.profit)+' <span class="mut">('+x.pct+'%)</span></td></tr>'}).join('');
     if(!o.length)h+='<tr><td colspan="6" class="mut">прибыльных лотов сейчас нет — сканер проверяет каждый час</td></tr>';
     document.getElementById('gc_table').innerHTML=h+'</table>';
   }).catch(function(){document.getElementById('gc_table').innerHTML='<span class="mut">нет данных</span>'});
@@ -104,17 +104,17 @@ function loadMarket(){
     kp.className='pill '+(k.net_sell?'live':'warn');
     kp.textContent=k.net_sell?(esc(k.venue)+' '+money(k.sell_price)+' · живой'):esc(k.status||'нет цены');
     document.getElementById('k_key').textContent=k.net_sell?('≈'+money(k.net_sell)+' ('+esc(k.venue)+')'):'—';
-    var h='<table><tr><th>Лот на plati</th><th class="hide-m">Продавец</th><th>Куплю</th><th>На руки</th><th>Профит</th></tr>';
-    h+=o.map(function(x){return '<tr><td><a href="'+esc(x.url)+'" target="_blank">'+esc(x.name)+'</a></td><td class="hide-m">'+esc(x.seller||'—')+'</td><td>'+money(x.price)+'</td><td>'+money(x.net_sell)+' <span class="mut">· '+esc(x.venue||'')+'</span></td><td class="pos">+'+money(x.profit)+' <span class="mut">('+x.pct+'%)</span></td></tr>'}).join('');
+    var h='<table><tr><th>Лот</th><th class="hide-m">Продавец</th><th>Куплю</th><th>На руки</th><th>Профит</th></tr>';
+    h+=o.map(function(x){return '<tr><td><a href="'+esc(x.url)+'" target="_blank">'+esc(x.name)+'</a>'+((x.source)?'<div class="mut">🛒 '+esc(x.source)+'</div>':'')+'</td><td class="hide-m">'+esc(x.seller||'—')+'</td><td>'+money(x.price)+'</td><td>'+money(x.net_sell)+' <span class="mut">· '+esc(x.venue||'')+'</span></td><td class="pos">+'+money(x.profit)+' <span class="mut">('+x.pct+'%)</span></td></tr>'}).join('');
     if(!o.length)h+='<tr><td colspan="5" class="mut">'+esc(k.status||'прибыльного лота нет — сканер проверяет каждый час')+'</td></tr>';
     document.getElementById('key_table').innerHTML=h+'</table>';
     var s=d.skins||[];
     var sp=document.getElementById('skin_pill');
     var okN=s.filter(function(x){return x.venue}).length;
     sp.className='pill live'; sp.textContent=okN+' из '+s.length+' скинов с живой ценой';
-    var h2='<table><tr><th>Скин</th><th>Цена продажи</th><th>На руки</th><th>Куплю на plati</th><th>Профит</th></tr>';
+    var h2='<table><tr><th>Скин</th><th>Цена продажи</th><th>На руки</th><th>Куплю</th><th>Профит</th></tr>';
     h2+=s.map(function(x){
-      var buy=x.buy?('<a href="'+esc(x.buy.url)+'" target="_blank">'+money(x.buy.price)+'</a>'):'<span class="mut">нет лота</span>';
+      var buy=x.buy?('<a href="'+esc(x.buy.url)+'" target="_blank">'+money(x.buy.price)+'</a> <span class="mut">· '+esc(x.source||'')+'</span>'):'<span class="mut">нет лота</span>';
       var pr=x.profit>0?('<span class="pos">+'+money(x.profit)+' <span class="mut">('+x.pct+'%)</span></span>'):'<span class="mut">—</span>';
       var sell=x.venue?(money(x.sell_price)+' <span class="mut">· '+esc(x.venue)+'</span>'):('<span class="mut">'+esc(x.status||'нет цены')+'</span>');
       return '<tr><td>'+esc(x.skin)+'</td><td>'+sell+'</td><td>'+(x.net_sell?money(x.net_sell):'—')+'</td><td>'+buy+'</td><td>'+pr+'</td></tr>';
