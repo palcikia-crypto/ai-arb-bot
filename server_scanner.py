@@ -32,6 +32,12 @@ def is_risky(name, region):
         if w in n: return "подозрительное описание"
     return None
 
+def soft_risk(name):
+    """Мягкие риски: лот остаётся в таблице, но получает жёлто-красную пометку."""
+    if re.search(r'\d+\s*[-\u2013]\s*\d+', name):
+        return "в названии диапазон номиналов — проверь, что цена именно за нужную сумму"
+    return None
+
 def check_lot(it, match_words, nominal, region, sell_max):
     name = (it.get("name") or "")
     price = it.get("price_usd")
@@ -55,8 +61,10 @@ def fetch_plati(query, match_words, nominal, region, sell_max):
     best = None
     for it in items:
         lot = check_lot(it, match_words, nominal, region, sell_max)
-        if lot and is_risky(lot["name"], region) is None and (best is None or lot["price"] < best["price"]):
-            best = lot
+        if lot and is_risky(lot["name"], region) is None:
+            lot["risk"] = soft_risk(lot["name"])
+            if best is None or lot["price"] < best["price"]:
+                best = lot
     return best
 
 def fetch_digi(query, match_words, nominal, region, sell_max):
@@ -71,8 +79,10 @@ def fetch_digi(query, match_words, nominal, region, sell_max):
         if not it.get("url"):
             it["url"] = "https://plati.market/itm/" + str(it.get("id", ""))
         lot = check_lot(it, match_words, nominal, region, sell_max)
-        if lot and is_risky(lot["name"], region) is None and (best is None or lot["price"] < best["price"]):
-            best = lot
+        if lot and is_risky(lot["name"], region) is None:
+            lot["risk"] = soft_risk(lot["name"])
+            if best is None or lot["price"] < best["price"]:
+                best = lot
     return best
 
 def main():
@@ -97,7 +107,7 @@ def main():
             "price": round(b["price"], 2), "nominal": nominal,
             "sell_price": round(sell, 2), "profit": round(profit, 2),
             "pct": round(profit / b["price"] * 100, 1),
-            "risk": is_risky(b["name"], region),
+            "risk": b.get("risk"),
             "source_rate": rate_source, "url": b["url"],
         })
     offers.sort(key=lambda x: x["pct"], reverse=True)
@@ -111,4 +121,4 @@ def main():
     print("gifts:", len(offers), "| rate:", rate_pct, "| live:", live)
 
 if __name__ == "__main__":
-    main()
+    main()"}}]
