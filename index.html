@@ -50,7 +50,7 @@ a{color:var(--acc)}
 <div class="kpis">
   <div class="kpi"><div class="l">Лучший профит (карты)</div><div class="v pos" id="k_profit">…</div></div>
   <div class="kpi"><div class="l">Маржа % (карты)</div><div class="v" id="k_pct">…</div></div>
-  <div class="kpi"><div class="l">Ключ TF2, Steam</div><div class="v" style="font-size:16px" id="k_key">…</div></div>
+  <div class="kpi"><div class="l">Ключ TF2 на руки</div><div class="v" style="font-size:16px" id="k_key">…</div></div>
   <div class="kpi"><div class="l">Обновлено</div><div class="v" style="font-size:14px" id="k_upd">…</div></div>
 </div>
 
@@ -61,15 +61,15 @@ a{color:var(--acc)}
 </div>
 
 <div class="card">
-  <h2>🔑 TF2-ключи: plati.market → рынок Steam <span class="pill" id="key_pill">…</span></h2>
+  <h2>🔑 TF2-ключи: plati.market → продажа <span class="pill" id="key_pill">…</span></h2>
   <div id="key_table">загрузка…</div>
-  <div class="mut" style="margin-top:8px">Ключ Mann Co. — самая ликвидная валюта Steam (десятки тысяч продаж в сутки). Цены после комиссии Steam. Продажа: выложить на рынок Steam, деньги приходят на баланс кошелька.</div>
+  <div class="mut" style="margin-top:8px">Ключ Mann Co. — самая ликвидная валюта Steam (десятки тысяч продаж в сутки). «На руки» = цена после комиссии площадки. Если Steam закрыт, сканер берёт цену Skinport и помечает это.</div>
 </div>
 
 <div class="card">
-  <h2>🔫 Скины CS2: plati.market → рынок Steam <span class="pill" id="skin_pill">…</span></h2>
+  <h2>🔫 Скины CS2: plati.market → продажа <span class="pill" id="skin_pill">…</span></h2>
   <div id="skin_table">загрузка…</div>
-  <div class="mut" style="margin-top:8px">Топ ликвидных скинов. «Нет лота» = на plati сейчас нет предложения дешевле цены продажи в Steam, это честно. Сканер проверяет каждый час, спреды появляются волнами.</div>
+  <div class="mut" style="margin-top:8px">Топ ликвидных скинов. «Нет лота» = на plati сейчас нет предложения дешевле цены продажи, это честно. Сканер проверяет каждый час, спреды появляются волнами.</div>
 </div>
 
 <div class="mut" id="upd_line">…</div>
@@ -101,27 +101,29 @@ function loadMarket(){
     document.getElementById('k_upd').textContent=fmtAgo(d.updated_at);
     var k=d.keys||{}, o=k.offers||[];
     var kp=document.getElementById('key_pill');
-    kp.className='pill '+(k.steam_price?'live':'warn');
-    kp.textContent=k.steam_price?('Steam '+money(k.steam_price)+' · живой'):'нет цены Steam';
-    document.getElementById('k_key').textContent=k.net_sell?('≈'+money(k.net_sell)+' на руки'):'—';
-    var h='<table><tr><th>Лот на plati</th><th class="hide-m">Продавец</th><th>Куплю</th><th>Steam на руки</th><th>Профит</th></tr>';
-    h+=o.map(function(x){return '<tr><td><a href="'+esc(x.url)+'" target="_blank">'+esc(x.name)+'</a></td><td class="hide-m">'+esc(x.seller||'—')+'</td><td>'+money(x.price)+'</td><td>'+money(x.net_sell)+'</td><td class="pos">+'+money(x.profit)+' <span class="mut">('+x.pct+'%)</span></td></tr>'}).join('');
-    if(!o.length)h+='<tr><td colspan="5" class="mut">'+(k.steam_price?'дешёвого ключа на plati сейчас нет (нужно дешевле '+money(k.net_sell)+') — сканер проверяет каждый час':'Steam не отдал цену, попробуй позже')+'</td></tr>';
+    kp.className='pill '+(k.net_sell?'live':'warn');
+    kp.textContent=k.net_sell?(esc(k.venue)+' '+money(k.sell_price)+' · живой'):esc(k.status||'нет цены');
+    document.getElementById('k_key').textContent=k.net_sell?('≈'+money(k.net_sell)+' ('+esc(k.venue)+')'):'—';
+    var h='<table><tr><th>Лот на plati</th><th class="hide-m">Продавец</th><th>Куплю</th><th>На руки</th><th>Профит</th></tr>';
+    h+=o.map(function(x){return '<tr><td><a href="'+esc(x.url)+'" target="_blank">'+esc(x.name)+'</a></td><td class="hide-m">'+esc(x.seller||'—')+'</td><td>'+money(x.price)+'</td><td>'+money(x.net_sell)+' <span class="mut">· '+esc(x.venue||'')+'</span></td><td class="pos">+'+money(x.profit)+' <span class="mut">('+x.pct+'%)</span></td></tr>'}).join('');
+    if(!o.length)h+='<tr><td colspan="5" class="mut">'+esc(k.status||'прибыльного лота нет — сканер проверяет каждый час')+'</td></tr>';
     document.getElementById('key_table').innerHTML=h+'</table>';
     var s=d.skins||[];
     var sp=document.getElementById('skin_pill');
-    sp.className='pill live'; sp.textContent=s.length+' скинов в скане';
-    var h2='<table><tr><th>Скин</th><th>Steam цена</th><th>На руки</th><th>Куплю на plati</th><th>Профит</th></tr>';
+    var okN=s.filter(function(x){return x.venue}).length;
+    sp.className='pill live'; sp.textContent=okN+' из '+s.length+' скинов с живой ценой';
+    var h2='<table><tr><th>Скин</th><th>Цена продажи</th><th>На руки</th><th>Куплю на plati</th><th>Профит</th></tr>';
     h2+=s.map(function(x){
       var buy=x.buy?('<a href="'+esc(x.buy.url)+'" target="_blank">'+money(x.buy.price)+'</a>'):'<span class="mut">нет лота</span>';
       var pr=x.profit>0?('<span class="pos">+'+money(x.profit)+' <span class="mut">('+x.pct+'%)</span></span>'):'<span class="mut">—</span>';
-      return '<tr><td>'+esc(x.skin)+'</td><td>'+money(x.steam_price)+'</td><td>'+money(x.net_sell)+'</td><td>'+buy+'</td><td>'+pr+'</td></tr>';
+      var sell=x.venue?(money(x.sell_price)+' <span class="mut">· '+esc(x.venue)+'</span>'):('<span class="mut">'+esc(x.status||'нет цены')+'</span>');
+      return '<tr><td>'+esc(x.skin)+'</td><td>'+sell+'</td><td>'+(x.net_sell?money(x.net_sell):'—')+'</td><td>'+buy+'</td><td>'+pr+'</td></tr>';
     }).join('');
     if(!s.length)h2+='<tr><td colspan="5" class="mut">данных пока нет — сканер вот-вот отработает</td></tr>';
     document.getElementById('skin_table').innerHTML=h2+'</table>';
   }).catch(function(){
-    document.getElementById('key_table').innerHTML='<span class="mut">первый прогон сканера ещё не прошёл — обнови страницу через час или чуть раньше</span>';
-    document.getElementById('skin_table').innerHTML='<span class="mut">ждём первый прогон сканера</span>';
+    document.getElementById('key_table').innerHTML='<span class="mut">прогон сканера ещё не прошёл — обнови страницу чуть позже</span>';
+    document.getElementById('skin_table').innerHTML='<span class="mut">ждём прогон сканера</span>';
   });
 }
 function refreshAll(){loadGC();loadMarket();document.getElementById('upd_line').textContent='обновлено '+new Date().toLocaleString('ru-RU')+' · автообновление каждые 5 мин'}
