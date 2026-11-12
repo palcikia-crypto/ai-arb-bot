@@ -1,0 +1,41 @@
+{
+ "updated_at": "2026-11-12T08:05:16Z",
+ "keys": {
+  "offers": [],
+  "steam_price": null
+ },
+ "skins": [
+  {
+   "skin": "AK-47 | Redline (Field-Tested)",
+   "status": "нет цены Steam"
+  },
+  {
+   "skin": "AWP | Asiimov (Field-Tested)",
+   "status": "нет цены Steam"
+  },
+  {
+   "skin": "AK-47 | Slate (Field-Tested)",
+   "status": "нет цены Steam"
+  },
+  {
+   "skin": "AWP | Neo-Noir (Field-Tested)",
+   "status": "нет цены Steam"
+  },
+  {
+   "skin": "M4A1-S | Hyper Beast (Field-Tested)",
+   "status": "нет цены Steam"
+  },
+  {
+   "skin": "Desert Eagle | Blaze (Factory New)",
+   "status": "нет цены Steam"
+  },
+  {
+   "skin": "Glock-18 | Fade (Factory New)",
+   "status": "нет цены Steam"
+  },
+  {
+   "skin": "USP-S | Kill Confirmed (Field-Tested)",
+   "status": "нет цены Steam"
+  }
+ ]
+}
