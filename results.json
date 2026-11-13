@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-13T04:44:48Z",
+ "updated_at": "2026-11-13T12:49:02Z",
  "rate_pct": 78,
  "rate_source": "HighCardRate (живой курс)",
  "rate_live": true,
@@ -20,17 +20,17 @@
   },
   {
    "category": "Nintendo 10",
-   "name": "Nintendo eShop  5-10-20-35-50-100$ USD США  Подарочная карта  авто",
-   "seller": "cdk-king",
+   "name": "Nintendo eShop США | 5-10-20-35-50 USD | АВТОВЫДАЧА 24/7",
+   "seller": "Golden fingers",
    "source": "plati.market",
-   "price": 5.2,
+   "price": 5.13,
    "nominal": 10,
    "sell_price": 7.8,
-   "profit": 2.6,
-   "pct": 50.0,
+   "profit": 2.67,
+   "pct": 52.0,
    "risk": "в названии диапазон номиналов — проверь, что цена именно за нужную сумму",
    "source_rate": "HighCardRate (живой курс)",
-   "url": "https://plati.market/itm/5811010"
+   "url": "https://plati.market/itm/6368876"
   },
   {
    "category": "Nintendo 20",
