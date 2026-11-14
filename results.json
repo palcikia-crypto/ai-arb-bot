@@ -1,23 +1,9 @@
 {
- "updated_at": "2026-11-14T08:29:11Z",
+ "updated_at": "2026-11-14T15:29:30Z",
  "rate_pct": 78,
  "rate_source": "HighCardRate (живой курс)",
  "rate_live": true,
  "offers": [
-  {
-   "category": "Xbox USA 10",
-   "name": "Подарочная карта Xbox Live (США) | 1–100 долларов США |",
-   "seller": "flash247",
-   "source": "Digiseller",
-   "price": 5.16,
-   "nominal": 10,
-   "sell_price": 7.8,
-   "profit": 2.64,
-   "pct": 51.2,
-   "risk": "в названии диапазон номиналов — проверь, что цена именно за нужную сумму",
-   "source_rate": "HighCardRate (живой курс)",
-   "url": "https://plati.market/itm/5437975"
-  },
   {
    "category": "Nintendo 10",
    "name": "Nintendo eShop  5-10-20-35-50-100$ USD США  Подарочная карта  авто",
