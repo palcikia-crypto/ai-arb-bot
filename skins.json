@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-13T20:16:05Z",
+ "updated_at": "2026-11-14T01:13:25Z",
  "keys": {
   "offers": [
    {
@@ -9,63 +9,63 @@
     "url": "https://plati.market/itm/4266181",
     "source": "Digiseller",
     "venue": "Steam",
-    "profit": 0.24,
-    "pct": 14.8
+    "profit": 0.22,
+    "pct": 13.6
    }
   ],
-  "sell_price": 2.19,
+  "sell_price": 2.16,
   "venue": "Steam",
-  "net_sell": 1.86,
+  "net_sell": 1.84,
   "status": "ok"
  },
  "skins": [
   {
    "skin": "AK-47 | Redline (Field-Tested)",
-   "sell_price": 30.72,
+   "sell_price": 31.24,
    "venue": "Steam",
-   "net_sell": 26.11,
+   "net_sell": 26.55,
    "status": "дешёвого лота на площадках нет"
   },
   {
    "skin": "AWP | Asiimov (Field-Tested)",
-   "sell_price": 129.12,
+   "sell_price": 127.01,
    "venue": "Steam",
-   "net_sell": 109.75,
+   "net_sell": 107.96,
    "status": "дешёвого лота на площадках нет"
   },
   {
    "skin": "AK-47 | Slate (Field-Tested)",
-   "sell_price": 5.02,
+   "sell_price": 5.26,
    "venue": "Steam",
-   "net_sell": 4.27,
+   "net_sell": 4.47,
    "status": "дешёвого лота на площадках нет"
   },
   {
    "skin": "AWP | Neo-Noir (Field-Tested)",
-   "sell_price": 49.48,
+   "sell_price": 45.0,
    "venue": "Steam",
-   "net_sell": 42.06,
+   "net_sell": 38.25,
    "status": "дешёвого лота на площадках нет"
   },
   {
    "skin": "M4A1-S | Hyper Beast (Field-Tested)",
-   "sell_price": 135.3,
+   "sell_price": 132.55,
    "venue": "Steam",
-   "net_sell": 115.01,
+   "net_sell": 112.67,
    "status": "дешёвого лота на площадках нет"
   },
   {
    "skin": "Desert Eagle | Blaze (Factory New)",
-   "sell_price": 748.57,
+   "sell_price": 745.52,
    "venue": "Steam",
-   "net_sell": 636.28,
+   "net_sell": 633.69,
    "status": "дешёвого лота на площадках нет"
   },
   {
    "skin": "Glock-18 | Fade (Factory New)",
-   "sell_price": 1634.23,
+   "sell_price": 1577.86,
    "venue": "Steam",
-   "net_sell": 1389.1,
+   "net_sell": 1341.18,
    "status": "дешёвого лота на площадках нет"
   },
   {

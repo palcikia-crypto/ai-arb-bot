@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-13T20:16:05Z",
+ "updated_at": "2026-11-14T01:13:25Z",
  "rate_pct": 78,
  "rate_source": "HighCardRate (живой курс)",
  "rate_live": true,
@@ -9,28 +9,28 @@
    "name": "Подарочная карта Xbox Live (США) | 1–100 долларов США |",
    "seller": "flash247",
    "source": "Digiseller",
-   "price": 5.11,
+   "price": 5.16,
    "nominal": 10,
    "sell_price": 7.8,
-   "profit": 2.69,
-   "pct": 52.6,
+   "profit": 2.64,
+   "pct": 51.2,
    "risk": "в названии диапазон номиналов — проверь, что цена именно за нужную сумму",
    "source_rate": "HighCardRate (живой курс)",
    "url": "https://plati.market/itm/5437975"
   },
   {
    "category": "Nintendo 10",
-   "name": "Nintendo eShop США | 5-10-20-35-50 USD | АВТОВЫДАЧА 24/7",
-   "seller": "Golden fingers",
+   "name": "Nintendo eShop  5-10-20-35-50-100$ USD США  Подарочная карта  авто",
+   "seller": "cdk-king",
    "source": "plati.market",
-   "price": 5.13,
+   "price": 5.2,
    "nominal": 10,
    "sell_price": 7.8,
-   "profit": 2.67,
-   "pct": 52.0,
+   "profit": 2.6,
+   "pct": 50.0,
    "risk": "в названии диапазон номиналов — проверь, что цена именно за нужную сумму",
    "source_rate": "HighCardRate (живой курс)",
-   "url": "https://plati.market/itm/6368876"
+   "url": "https://plati.market/itm/5811010"
   },
   {
    "category": "Nintendo 20",
@@ -48,17 +48,17 @@
   },
   {
    "category": "Steam Turkey 10",
-   "name": "🔥STEAM GIFT CARD🔥10-75$ USD⚡️ТУРЦИЯ⚡️АВТОДОСТАВКА",
-   "seller": "Робин Гуд ШОП",
+   "name": "Карты Steam 5-10-20-50-100$ Турция/Аргентина/США🔵USD",
+   "seller": "Igromagaz",
    "source": "plati.market",
-   "price": 6.57,
+   "price": 5.87,
    "nominal": 10,
    "sell_price": 7.8,
-   "profit": 1.23,
-   "pct": 18.7,
+   "profit": 1.93,
+   "pct": 32.9,
    "risk": "в названии диапазон номиналов — проверь, что цена именно за нужную сумму",
    "source_rate": "HighCardRate (живой курс)",
-   "url": "https://plati.market/itm/4377178"
+   "url": "https://plati.market/itm/6319928"
   }
  ]
 }
