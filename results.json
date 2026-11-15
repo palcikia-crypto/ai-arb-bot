@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-15T07:28:44Z",
+ "updated_at": "2026-11-15T15:14:33Z",
  "rate_pct": 78,
  "rate_source": "HighCardRate (живой курс)",
  "rate_live": true,
@@ -31,6 +31,20 @@
    "risk": null,
    "source_rate": "HighCardRate (живой курс)",
    "url": "https://plati.market/itm/5411964"
+  },
+  {
+   "category": "Xbox USA 10",
+   "name": "Подарочная Карта Xbox Live 5-100 USD США + ПОДАРОК",
+   "seller": "VIA.GAMES",
+   "source": "Digiseller",
+   "price": 5.68,
+   "nominal": 10,
+   "sell_price": 7.8,
+   "profit": 2.12,
+   "pct": 37.3,
+   "risk": "в названии диапазон номиналов — проверь, что цена именно за нужную сумму",
+   "source_rate": "HighCardRate (живой курс)",
+   "url": "https://plati.market/itm/3694952"
   },
   {
    "category": "Steam Turkey 10",
