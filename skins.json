@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-14T20:20:06Z",
+ "updated_at": "2026-11-15T00:40:33Z",
  "keys": {
   "offers": [
    {
@@ -9,35 +9,35 @@
     "url": "https://plati.market/itm/4266181",
     "source": "Digiseller",
     "venue": "Steam",
-    "profit": 0.23,
-    "pct": 14.2
+    "profit": 0.24,
+    "pct": 14.8
    }
   ],
-  "sell_price": 2.18,
+  "sell_price": 2.19,
   "venue": "Steam",
-  "net_sell": 1.85,
+  "net_sell": 1.86,
   "status": "ok"
  },
  "skins": [
   {
    "skin": "AK-47 | Redline (Field-Tested)",
-   "sell_price": 31.78,
+   "sell_price": 32.0,
    "venue": "Steam",
-   "net_sell": 27.01,
+   "net_sell": 27.2,
    "status": "дешёвого лота на площадках нет"
   },
   {
    "skin": "AWP | Asiimov (Field-Tested)",
-   "sell_price": 127.01,
+   "sell_price": 139.72,
    "venue": "Steam",
-   "net_sell": 107.96,
+   "net_sell": 118.76,
    "status": "дешёвого лота на площадках нет"
   },
   {
    "skin": "AK-47 | Slate (Field-Tested)",
-   "sell_price": 4.76,
+   "sell_price": 4.85,
    "venue": "Steam",
-   "net_sell": 4.05,
+   "net_sell": 4.12,
    "status": "дешёвого лота на площадках нет"
   },
   {
@@ -70,9 +70,9 @@
   },
   {
    "skin": "USP-S | Kill Confirmed (Field-Tested)",
-   "sell_price": 76.71,
+   "sell_price": 76.2,
    "venue": "Steam",
-   "net_sell": 65.2,
+   "net_sell": 64.77,
    "status": "дешёвого лота на площадках нет"
   }
  ]
