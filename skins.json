@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-17T19:32:43Z",
+ "updated_at": "2026-11-18T02:01:16Z",
  "keys": {
   "offers": [
    {
@@ -9,42 +9,42 @@
     "url": "https://plati.market/itm/4266181",
     "source": "Digiseller",
     "venue": "Steam",
-    "profit": 0.24,
-    "pct": 14.8
+    "profit": 0.22,
+    "pct": 13.6
    }
   ],
-  "sell_price": 2.19,
+  "sell_price": 2.16,
   "venue": "Steam",
-  "net_sell": 1.86,
+  "net_sell": 1.84,
   "status": "ok"
  },
  "skins": [
   {
    "skin": "AK-47 | Redline (Field-Tested)",
-   "sell_price": 30.73,
+   "sell_price": 30.83,
    "venue": "Steam",
-   "net_sell": 26.12,
+   "net_sell": 26.21,
    "status": "дешёвого лота на площадках нет"
   },
   {
    "skin": "AWP | Asiimov (Field-Tested)",
-   "sell_price": 123.25,
+   "sell_price": 114.0,
    "venue": "Steam",
-   "net_sell": 104.76,
+   "net_sell": 96.9,
    "status": "дешёвого лота на площадках нет"
   },
   {
    "skin": "AK-47 | Slate (Field-Tested)",
-   "sell_price": 4.8,
+   "sell_price": 4.6,
    "venue": "Steam",
-   "net_sell": 4.08,
+   "net_sell": 3.91,
    "status": "дешёвого лота на площадках нет"
   },
   {
    "skin": "AWP | Neo-Noir (Field-Tested)",
-   "sell_price": 45.21,
+   "sell_price": 46.24,
    "venue": "Steam",
-   "net_sell": 38.43,
+   "net_sell": 39.3,
    "status": "дешёвого лота на площадках нет"
   },
   {
@@ -63,16 +63,16 @@
   },
   {
    "skin": "Glock-18 | Fade (Factory New)",
-   "sell_price": 1549.88,
+   "sell_price": 1774.86,
    "venue": "Steam",
-   "net_sell": 1317.4,
+   "net_sell": 1508.63,
    "status": "дешёвого лота на площадках нет"
   },
   {
    "skin": "USP-S | Kill Confirmed (Field-Tested)",
-   "sell_price": 69.6,
+   "sell_price": 74.66,
    "venue": "Steam",
-   "net_sell": 59.16,
+   "net_sell": 63.46,
    "status": "дешёвого лота на площадках нет"
   }
  ]
