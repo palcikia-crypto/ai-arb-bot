@@ -1,14 +1,42 @@
 {
- "updated_at": "2026-11-18T19:21:19Z",
+ "updated_at": "2026-11-19T01:38:31Z",
  "rate_pct": 78,
  "rate_source": "HighCardRate (живой курс)",
  "rate_live": true,
  "offers": [
   {
+   "category": "Nintendo 10",
+   "name": "Nintendo eShop США | 5-10-20-35-50 USD | АВТОВЫДАЧА 24/7",
+   "seller": "Golden fingers",
+   "source": "plati.market",
+   "price": 5.18,
+   "nominal": 10,
+   "sell_price": 7.8,
+   "profit": 2.62,
+   "pct": 50.6,
+   "risk": "в названии диапазон номиналов — проверь, что цена именно за нужную сумму",
+   "source_rate": "HighCardRate (живой курс)",
+   "url": "https://plati.market/itm/6368876"
+  },
+  {
+   "category": "Nintendo 20",
+   "name": "🧡 Nintendo eShop GIft Card 💳 10/20/50/100 USD 🌍 США",
+   "seller": "LOOTIFY",
+   "source": "plati.market",
+   "price": 10.9,
+   "nominal": 20,
+   "sell_price": 15.6,
+   "profit": 4.7,
+   "pct": 43.1,
+   "risk": null,
+   "source_rate": "HighCardRate (живой курс)",
+   "url": "https://plati.market/itm/5411964"
+  },
+  {
    "category": "Steam Turkey 10",
    "name": "Карты Steam 5-10-20-50-100$ Турция/Аргентина/США🔵USD",
    "seller": "Igromagaz",
-   "source": "Digiseller",
+   "source": "plati.market",
    "price": 5.87,
    "nominal": 10,
    "sell_price": 7.8,
@@ -17,20 +45,6 @@
    "risk": "в названии диапазон номиналов — проверь, что цена именно за нужную сумму",
    "source_rate": "HighCardRate (живой курс)",
    "url": "https://plati.market/itm/6319928"
-  },
-  {
-   "category": "Nintendo 10",
-   "name": "🍑 [АВТО 24\\7] КЛЮЧ NINTENDO 5✦10✦20✦35✦50✦70✦100✦150✦200 USD✦США🔑АВТО",
-   "seller": "forYou97",
-   "source": "Digiseller",
-   "price": 6.44,
-   "nominal": 10,
-   "sell_price": 7.8,
-   "profit": 1.36,
-   "pct": 21.1,
-   "risk": null,
-   "source_rate": "HighCardRate (живой курс)",
-   "url": "https://plati.market/itm/6078008"
   }
  ]
 }
