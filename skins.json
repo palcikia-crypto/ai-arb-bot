@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-19T01:38:31Z",
+ "updated_at": "2026-11-19T09:46:21Z",
  "keys": {
   "offers": [
    {
@@ -9,49 +9,49 @@
     "url": "https://plati.market/itm/4266181",
     "source": "Digiseller",
     "venue": "Steam",
-    "profit": 0.2,
-    "pct": 12.3
+    "profit": 0.22,
+    "pct": 13.6
    }
   ],
-  "sell_price": 2.14,
+  "sell_price": 2.16,
   "venue": "Steam",
-  "net_sell": 1.82,
+  "net_sell": 1.84,
   "status": "ok"
  },
  "skins": [
   {
    "skin": "AK-47 | Redline (Field-Tested)",
-   "sell_price": 29.61,
+   "sell_price": 28.94,
    "venue": "Steam",
-   "net_sell": 25.17,
+   "net_sell": 24.6,
    "status": "дешёвого лота на площадках нет"
   },
   {
    "skin": "AWP | Asiimov (Field-Tested)",
-   "sell_price": 121.35,
+   "sell_price": 119.32,
    "venue": "Steam",
-   "net_sell": 103.15,
+   "net_sell": 101.42,
    "status": "дешёвого лота на площадках нет"
   },
   {
    "skin": "AK-47 | Slate (Field-Tested)",
-   "sell_price": 5.0,
+   "sell_price": 4.61,
    "venue": "Steam",
-   "net_sell": 4.25,
+   "net_sell": 3.92,
    "status": "дешёвого лота на площадках нет"
   },
   {
    "skin": "AWP | Neo-Noir (Field-Tested)",
-   "sell_price": 46.64,
+   "sell_price": 46.0,
    "venue": "Steam",
-   "net_sell": 39.64,
+   "net_sell": 39.1,
    "status": "дешёвого лота на площадках нет"
   },
   {
    "skin": "M4A1-S | Hyper Beast (Field-Tested)",
-   "sell_price": 125.51,
+   "sell_price": 130.92,
    "venue": "Steam",
-   "net_sell": 106.68,
+   "net_sell": 111.28,
    "status": "дешёвого лота на площадках нет"
   },
   {
@@ -70,9 +70,9 @@
   },
   {
    "skin": "USP-S | Kill Confirmed (Field-Tested)",
-   "sell_price": 69.07,
+   "sell_price": 72.36,
    "venue": "Steam",
-   "net_sell": 58.71,
+   "net_sell": 61.51,
    "status": "дешёвого лота на площадках нет"
   }
  ]
