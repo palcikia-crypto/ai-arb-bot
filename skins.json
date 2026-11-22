@@ -1,79 +1,41 @@
 {
- "updated_at": "2026-11-22T00:52:59Z",
+ "updated_at": "2026-11-22T07:43:01Z",
  "keys": {
-  "offers": [
-   {
-    "name": "Mann Co. Supply Crate Key - TF2 Ключи",
-    "price": 1.62,
-    "seller": "mr.chu",
-    "url": "https://plati.market/itm/4266181",
-    "source": "Digiseller",
-    "venue": "Steam",
-    "profit": 0.21,
-    "pct": 13.0
-   }
-  ],
-  "sell_price": 2.15,
-  "venue": "Steam",
-  "net_sell": 1.83,
-  "status": "ok"
+  "offers": [],
+  "status": "нет цены продажи (Steam и Skinport молчат)"
  },
  "skins": [
   {
    "skin": "AK-47 | Redline (Field-Tested)",
-   "sell_price": 29.68,
-   "venue": "Steam",
-   "net_sell": 25.23,
-   "status": "дешёвого лота на площадках нет"
+   "status": "нет цены продажи"
   },
   {
    "skin": "AWP | Asiimov (Field-Tested)",
-   "sell_price": 115.55,
-   "venue": "Steam",
-   "net_sell": 98.22,
-   "status": "дешёвого лота на площадках нет"
+   "status": "нет цены продажи"
   },
   {
    "skin": "AK-47 | Slate (Field-Tested)",
-   "sell_price": 4.31,
-   "venue": "Steam",
-   "net_sell": 3.66,
-   "status": "дешёвого лота на площадках нет"
+   "status": "нет цены продажи"
   },
   {
    "skin": "AWP | Neo-Noir (Field-Tested)",
-   "sell_price": 42.81,
-   "venue": "Steam",
-   "net_sell": 36.39,
-   "status": "дешёвого лота на площадках нет"
+   "status": "нет цены продажи"
   },
   {
    "skin": "M4A1-S | Hyper Beast (Field-Tested)",
-   "sell_price": 115.0,
-   "venue": "Steam",
-   "net_sell": 97.75,
-   "status": "дешёвого лота на площадках нет"
+   "status": "нет цены продажи"
   },
   {
    "skin": "Desert Eagle | Blaze (Factory New)",
-   "sell_price": 701.18,
-   "venue": "Steam",
-   "net_sell": 596.0,
-   "status": "дешёвого лота на площадках нет"
+   "status": "нет цены продажи"
   },
   {
    "skin": "Glock-18 | Fade (Factory New)",
-   "sell_price": 1680.51,
-   "venue": "Steam",
-   "net_sell": 1428.43,
-   "status": "дешёвого лота на площадках нет"
+   "status": "нет цены продажи"
   },
   {
    "skin": "USP-S | Kill Confirmed (Field-Tested)",
-   "sell_price": 69.0,
-   "venue": "Steam",
-   "net_sell": 58.65,
-   "status": "дешёвого лота на площадках нет"
+   "status": "нет цены продажи"
   }
  ]
 }
