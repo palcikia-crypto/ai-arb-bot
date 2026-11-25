@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-25T13:49:07Z",
+ "updated_at": "2026-11-25T22:54:56Z",
  "keys": {
   "offers": [
    {
@@ -13,7 +13,7 @@
     "pct": 6.8
    }
   ],
-  "sell_price": 2.03,
+  "sell_price": 2.04,
   "venue": "Steam",
   "net_sell": 1.73,
   "status": "ok"
@@ -21,58 +21,58 @@
  "skins": [
   {
    "skin": "AK-47 | Redline (Field-Tested)",
-   "sell_price": 26.48,
+   "sell_price": 25.42,
    "venue": "Steam",
-   "net_sell": 22.51,
+   "net_sell": 21.61,
    "status": "дешёвого лота на площадках нет"
   },
   {
    "skin": "AWP | Asiimov (Field-Tested)",
-   "sell_price": 100.42,
+   "sell_price": 99.93,
    "venue": "Steam",
-   "net_sell": 85.36,
+   "net_sell": 84.94,
    "status": "дешёвого лота на площадках нет"
   },
   {
    "skin": "AK-47 | Slate (Field-Tested)",
-   "sell_price": 4.28,
+   "sell_price": 4.3,
    "venue": "Steam",
-   "net_sell": 3.64,
+   "net_sell": 3.65,
    "status": "дешёвого лота на площадках нет"
   },
   {
    "skin": "AWP | Neo-Noir (Field-Tested)",
-   "sell_price": 41.22,
+   "sell_price": 41.26,
    "venue": "Steam",
-   "net_sell": 35.04,
+   "net_sell": 35.07,
    "status": "дешёвого лота на площадках нет"
   },
   {
    "skin": "M4A1-S | Hyper Beast (Field-Tested)",
-   "sell_price": 109.52,
+   "sell_price": 123.32,
    "venue": "Steam",
-   "net_sell": 93.09,
+   "net_sell": 104.82,
    "status": "дешёвого лота на площадках нет"
   },
   {
    "skin": "Desert Eagle | Blaze (Factory New)",
-   "sell_price": 598.46,
+   "sell_price": 592.85,
    "venue": "Steam",
-   "net_sell": 508.69,
+   "net_sell": 503.92,
    "status": "дешёвого лота на площадках нет"
   },
   {
    "skin": "Glock-18 | Fade (Factory New)",
-   "sell_price": 1678.37,
+   "sell_price": 1674.54,
    "venue": "Steam",
-   "net_sell": 1426.61,
+   "net_sell": 1423.36,
    "status": "дешёвого лота на площадках нет"
   },
   {
    "skin": "USP-S | Kill Confirmed (Field-Tested)",
-   "sell_price": 70.1,
+   "sell_price": 69.65,
    "venue": "Steam",
-   "net_sell": 59.58,
+   "net_sell": 59.2,
    "status": "дешёвого лота на площадках нет"
   }
  ]
