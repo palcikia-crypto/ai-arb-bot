@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-26T23:26:40Z",
+ "updated_at": "2026-11-27T06:21:33Z",
  "keys": {
   "offers": [
    {
@@ -9,56 +9,56 @@
     "url": "https://plati.market/itm/4266181",
     "source": "Digiseller",
     "venue": "Steam",
-    "profit": 0.09,
-    "pct": 5.6
+    "profit": 0.11,
+    "pct": 6.8
    }
   ],
-  "sell_price": 2.01,
+  "sell_price": 2.04,
   "venue": "Steam",
-  "net_sell": 1.71,
+  "net_sell": 1.73,
   "status": "ok"
  },
  "skins": [
   {
    "skin": "AK-47 | Redline (Field-Tested)",
-   "sell_price": 25.04,
+   "sell_price": 24.57,
    "venue": "Steam",
-   "net_sell": 21.28,
+   "net_sell": 20.88,
    "status": "дешёвого лота на площадках нет"
   },
   {
    "skin": "AWP | Asiimov (Field-Tested)",
-   "sell_price": 96.05,
+   "sell_price": 99.2,
    "venue": "Steam",
-   "net_sell": 81.64,
+   "net_sell": 84.32,
    "status": "дешёвого лота на площадках нет"
   },
   {
    "skin": "AK-47 | Slate (Field-Tested)",
-   "sell_price": 4.27,
+   "sell_price": 4.17,
    "venue": "Steam",
-   "net_sell": 3.63,
+   "net_sell": 3.54,
    "status": "дешёвого лота на площадках нет"
   },
   {
    "skin": "AWP | Neo-Noir (Field-Tested)",
-   "sell_price": 37.0,
+   "sell_price": 39.99,
    "venue": "Steam",
-   "net_sell": 31.45,
+   "net_sell": 33.99,
    "status": "дешёвого лота на площадках нет"
   },
   {
    "skin": "M4A1-S | Hyper Beast (Field-Tested)",
-   "sell_price": 110.67,
+   "sell_price": 111.04,
    "venue": "Steam",
-   "net_sell": 94.07,
+   "net_sell": 94.38,
    "status": "дешёвого лота на площадках нет"
   },
   {
    "skin": "Desert Eagle | Blaze (Factory New)",
-   "sell_price": 559.07,
+   "sell_price": 550.0,
    "venue": "Steam",
-   "net_sell": 475.21,
+   "net_sell": 467.5,
    "status": "дешёвого лота на площадках нет"
   },
   {
@@ -70,9 +70,9 @@
   },
   {
    "skin": "USP-S | Kill Confirmed (Field-Tested)",
-   "sell_price": 64.57,
+   "sell_price": 65.0,
    "venue": "Steam",
-   "net_sell": 54.88,
+   "net_sell": 55.25,
    "status": "дешёвого лота на площадках нет"
   }
  ]
