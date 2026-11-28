@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-28T08:44:45Z",
+ "updated_at": "2026-11-28T17:19:26Z",
  "keys": {
   "offers": [
    {
@@ -13,7 +13,7 @@
     "pct": 6.8
    }
   ],
-  "sell_price": 2.04,
+  "sell_price": 2.03,
   "venue": "Steam",
   "net_sell": 1.73,
   "status": "ok"
@@ -21,44 +21,44 @@
  "skins": [
   {
    "skin": "AK-47 | Redline (Field-Tested)",
-   "sell_price": 27.72,
+   "sell_price": 27.07,
    "venue": "Steam",
-   "net_sell": 23.56,
+   "net_sell": 23.01,
    "status": "дешёвого лота на площадках нет"
   },
   {
    "skin": "AWP | Asiimov (Field-Tested)",
-   "sell_price": 99.18,
+   "sell_price": 99.52,
    "venue": "Steam",
-   "net_sell": 84.3,
+   "net_sell": 84.59,
    "status": "дешёвого лота на площадках нет"
   },
   {
    "skin": "AK-47 | Slate (Field-Tested)",
-   "sell_price": 4.21,
+   "sell_price": 4.17,
    "venue": "Steam",
-   "net_sell": 3.58,
+   "net_sell": 3.54,
    "status": "дешёвого лота на площадках нет"
   },
   {
    "skin": "AWP | Neo-Noir (Field-Tested)",
-   "sell_price": 37.99,
+   "sell_price": 37.88,
    "venue": "Steam",
-   "net_sell": 32.29,
+   "net_sell": 32.2,
    "status": "дешёвого лота на площадках нет"
   },
   {
    "skin": "M4A1-S | Hyper Beast (Field-Tested)",
-   "sell_price": 114.88,
+   "sell_price": 124.28,
    "venue": "Steam",
-   "net_sell": 97.65,
+   "net_sell": 105.64,
    "status": "дешёвого лота на площадках нет"
   },
   {
    "skin": "Desert Eagle | Blaze (Factory New)",
-   "sell_price": 561.63,
+   "sell_price": 598.17,
    "venue": "Steam",
-   "net_sell": 477.39,
+   "net_sell": 508.44,
    "status": "дешёвого лота на площадках нет"
   },
   {
@@ -70,9 +70,9 @@
   },
   {
    "skin": "USP-S | Kill Confirmed (Field-Tested)",
-   "sell_price": 63.26,
+   "sell_price": 65.78,
    "venue": "Steam",
-   "net_sell": 53.77,
+   "net_sell": 55.91,
    "status": "дешёвого лота на площадках нет"
   }
  ]
